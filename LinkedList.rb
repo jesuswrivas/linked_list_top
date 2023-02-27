@@ -103,19 +103,32 @@ class LinkedList
 
 
      def contains?(item)
-
-        for i in (0..self.size-1) do
-            if self.at_index(i).value == item
-                return true
-            end
+        (0..self.size-1).each do |i|
+            return true if self.at_index(i).value == item
         end
-        
         return false
-        
+       
     end
            
+    def find(item)
+        (0..self.size-1).each do |i|
+            return i if self.at_index(i).value == item
+        end
+        return nil
+    end
      
-    
+    def to_s
+        current_value = @head
+        print "#{current_value.value} ->"
+        while current_value.pointer != nil
+            current_value = current_value.pointer      
+            print "#{current_value.value} ->"     
+        end
+        print "nil"
+        
+    end
+
+
 end
 
 
