@@ -99,7 +99,21 @@ class LinkedList
             
         end
         
-     end
+    end
+
+
+     def contains?(item)
+
+        for i in (0..self.size-1) do
+            if self.at_index(i).value == item
+                return true
+            end
+        end
+        
+        return false
+        
+    end
+           
      
     
 end
@@ -116,4 +130,4 @@ linked_list.prepend(nodeA)
 
 linked_list.prepend(nodeB) 
 linked_list.append(nodeC)
-linked_list.pop
+
