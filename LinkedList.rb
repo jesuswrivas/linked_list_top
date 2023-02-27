@@ -61,7 +61,7 @@ class LinkedList
 
 
     def tail
-        #return nil if @head == nil
+        return nil if @head == nil
 
         current_value = @head
        
@@ -87,8 +87,10 @@ class LinkedList
 
 
     def pop
+        return nil if @head == nil
+
         if self.size == 1
-            popped_value = self.tail
+            popped_value = self.tail.value
             @head = nil
             return popped_value
         
@@ -118,6 +120,8 @@ class LinkedList
     end
      
     def to_s
+        return nil if @head == nil
+
         current_value = @head
         print "#{current_value.value} ->"
         while current_value.pointer != nil
@@ -132,15 +136,4 @@ class LinkedList
 end
 
 
-nodeA = Node.new(4)
-nodeB = Node.new(10)
-nodeC = Node.new(33)
-nodeD = Node.new(44)
-
-linked_list = LinkedList.new
-
-linked_list.prepend(nodeA) 
-
-linked_list.prepend(nodeB) 
-linked_list.append(nodeC)
 
